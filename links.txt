@@ -1,0 +1,54 @@
+1- the linux kernel archives
+   https://www.kernel.org/
+
+
+- kernel github
+- kernel documentation
+
+-----------------------------------
+-----------------------------------
+-----------------------------------
+
+
+2 - the linux kernel foundation
+    https://www.linuxfoundation.org/
+
+
+-----------------------------------
+-----------------------------------
+-----------------------------------
+
+3 - linux kernel for newbies
+    https://kernelnewbies.org/ 
+
+
+-----------------------------------
+-----------------------------------
+-----------------------------------
+
+4 - the mailing list
+    https://lkml.org/ (archive)
+
+
+https://lore.kernel.org/lists.html
+https://subspace.kernel.org/vger.kernel.org.html
+
+
+
+-----------------------------------
+google search:
+
+site:https://lkml.org/ nfs
+
+
+-----------------------------------
+
+https://www.reddit.com/r/linusrants
+
+
+-----------------------------------
+
+linux-kernel@vger.kernel.org
+linux-newbie@vger.kernel.org
+
+

@@ -1,0 +1,1 @@
+guide to user kernel image after compilation with different bootloaders

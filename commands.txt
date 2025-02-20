@@ -1,0 +1,13 @@
+------------------ modules commands --------------------
+
+sudo insmod module.ko
+
+lsmod
+
+lsmod | grep module
+
+dmesg
+
+dmesg | tail
+
+sudo rmmod module
