@@ -1,1 +1,27 @@
 compiling steps
+
+
+STABLE
+wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.13.5.tar.xz
+
+
+
+MAINLINE
+
+wget https://git.kernel.org/torvalds/t/linux-6.14-rc4.tar.gz
+
+tar -xzf linux-6.0.7.tar.gz
+
+
+
+sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison
+
+
+cp -v /boot/config-$(uname -r) .config
+
+
+make menuconfig
+
+
+
+make
