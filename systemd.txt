@@ -1,3 +1,4 @@
+ps -eLf | grep kworker
 systemctl list-units --type=service
 
   accounts-daemon.service                               loaded active running Accounts Service

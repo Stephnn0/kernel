@@ -24,6 +24,9 @@ make menuconfig
 
 
 
+make ARCH=i386 -j$(nproc)
+make ARCH=<your architecture> -jN
+
 make
 
 
@@ -35,4 +38,40 @@ scripts/config --disable SYSTEM_REVOCATION_KEYS
 ==========================================================================
 
 
+automatically install the kernel 
+
+make modules_install
+make install
+
+
+manually
+
+Installs the kernel to /boot/
+Installs modules to /lib/modules/X.Y.Z/ (where X.Y.Z is something like 3.1.5)
+Updates file /boot/grub/grub.conf
+sudo update-grub
+#verify
+cat /boot/grub/grub.cfg  # or /boot/grub2/grub.cfg
+
+
+1 - sudo cp arch/x86/boot/bzImage /boot/vmlinuz-6.x.y
+
+Most modern systems need an initramfs to boot (it loads drivers and mounts the root filesystem). Generate it manually:
+
+2- sudo update-initramfs -c -k 6.x.y
+
+
+Manually Update GRUB Configuration
+
+GRUB’s config file isn’t edited directly—you generate it. The file to update depends on your system:
+
+    BIOS Systems: /boot/grub/grub.cfg (Debian/Ubuntu) or /boot/grub2/grub.cfg (Fedora/RHEL).
+    UEFI Systems: Often /boot/efi/EFI/<distro>/grub.cfg (e.g., /boot/efi/EFI/ubuntu/grub.cfg).
+
+
+3- sudo update-grub
+
+cat /boot/grub/grub.cfg
+
+sudo reboot
 
