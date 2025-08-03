@@ -1,0 +1,22 @@
+makefiles, kbuild, kconfig
+
+make menuconfig
+make config
+
+ncurses ---> lib to write TUIs interfaces inthe terminal
+
+(source menuconfig)
+linux/scripts/kconfig/mconf.c
+
+
+
+============================================================
+export KBUILD_DEFCONFIG KBUILD_KCONFIG CC_VERSION_TEXT RUSTC_VERSION_TEXT
+
+config: outputmakefile scripts_basic FORCE
+	$(Q)$(MAKE) $(build)=scripts/kconfig $@
+
+%config: outputmakefile scripts_basic FORCE
+	$(Q)$(MAKE) $(build)=scripts/kconfig $@
+
+==============================================================
