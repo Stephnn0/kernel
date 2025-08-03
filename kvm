@@ -1,0 +1,33 @@
+egrep -c '(vmx|svm)' /proc/cpuinfo
+
+sudo apt install qemu-kvm libvirt-daemon-system virtinst bridge-utils
+
+qemu-kvm
+libvirt-daemon-system -------> libvirtd (deamon) , virsh (cli), virt-manager (gui) , virt-viewer (display)
+virtinst ------> virt-install , virt-clone
+bridge-utils
+
+------------------------------------------------------------------------------------------------------------
+qemu-system-x86_64 -m 2048 -smp 2 -drive file=vm.img,format=qcow2 -cdrom installer.iso -boot d
+------------------------------------------------------------------------------------------------------------
+virt-install \
+  --name ubuntu-vm \
+  --ram 2048 \
+  --vcpus 2 \
+  --disk size=20 \
+  --cdrom ubuntu.iso \
+  --os-variant ubuntu22.04 \
+  --network network=default \
+  --graphics none
+------------------------------------------------------------------------------------------------------------
+virsh list
+virsh list --all
+virsh console ubuntu-vm
+virt-viewer ubuntu-vm
+virsh shutdown ubuntu-vm
+virsh destroy ubuntu-vm
+virsh undefine ubuntu-vm --remove-all-storage
+
+-------------------------------------------------------------------------------------------------------------
+sudo apt install virt-manager
+sudo virt-manager
